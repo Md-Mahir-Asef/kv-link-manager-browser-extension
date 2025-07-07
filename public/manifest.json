@@ -5,6 +5,6 @@
   "manifest_version": 3,
   "action": {
     "default_popup": "./index.html",
-    "default_icon": "./images/logo.ico"
+    "default_icon": "./logo.ico"
   }
 }
