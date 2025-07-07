@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+*,
+*::after,
+*::before,
+html,
+html::after,
+html::before,
+body,
+body::after,
+body::before {
+  height: max-content;
+  width: max-content;
+  padding: 5px;
+}
