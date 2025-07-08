@@ -3,17 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
-*,
-*::after,
-*::before,
-html,
-html::after,
-html::before,
-body,
-body::after,
-body::before {
-  height: max-content;
-  width: max-content;
+#root {
+  height: 500px;
+  width: 500px;
 }
 
 @theme inline {

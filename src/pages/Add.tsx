@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 import { useState } from "react";
 
@@ -18,7 +19,7 @@ function Add() {
             console.log(chrome.runtime.lastError);
           } else {
             navigate("/");
-            alert("Link Added Successfully!");
+            toast("Link Added Successfully!");
             console.log("Link Added Successfully!");
           }
         });
