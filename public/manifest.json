@@ -5,7 +5,17 @@
   "manifest_version": 3,
   "action": {
     "default_popup": "./index.html",
-    "default_icon": "./logo.ico"
+    "default_icon": {
+      "16": "logo.ico",
+      "48": "logo.ico",
+      "128": "logo.ico"
+    },
+    "default_title": "KV Link Manager"
   },
-  "permissions": ["storage"]
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "windows"],
+  "icons": {
+    "16": "logo.ico",
+    "48": "logo.ico",
+    "128": "logo.ico"
+  }
 }
