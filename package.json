@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "chokidar": "npx chokidar . -i \"node_modules/**\" -i \"dist/**\" --verbose -c \"npm run build\"",
+    "dev:vite": "vite",
+    "dev": "npx chokidar . -i \"node_modules/**\" -i \"dist/**\" --verbose -c \"npm run build\"",
     "build": "tsc -b && vite build --watch",
     "lint": "eslint .",
     "preview": "vite preview",

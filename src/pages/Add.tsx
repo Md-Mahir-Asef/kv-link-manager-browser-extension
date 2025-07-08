@@ -13,7 +13,7 @@ function Add() {
 
   const addLink = () => {
     try {
-      if (typeof chrome !== "undefined" && chrome.storage?.local) {
+      if (typeof chrome !== "undefined" && chrome.storage?.local && link.includes("://")) {
         chrome.storage.local.set({ [key]: link }, () => {
           if (chrome.runtime.lastError) {
             console.log(chrome.runtime.lastError);
@@ -24,10 +24,10 @@ function Add() {
           }
         });
       } else {
-        console.log("Chrome Undefined");
+        toast("Failed Adding Link!");
       }
     } catch (err) {
-      console.log(err);
+      toast("Failed Adding Link!");
     }
   };
 
