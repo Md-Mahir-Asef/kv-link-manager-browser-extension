@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { RotateCw } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { DataTable } from "@/components/DataTable";
 
@@ -20,21 +18,25 @@ function Home() {
     toast("Reloaded!");
   };
 
+  const handleDeletion = (key: string) => {
+    try {
+      chrome.storage.local.remove(key, () => {
+        toast(`Successfully Deleted Link to ${key}`);
+        setTrigger((pre) => pre + 1);
+      });
+    } catch (err) {
+      toast("Failed to Delete Link");
+    }
+  };
+
   return (
-    <div className="pl-4">
-      <div className="flex flex-row">
-        <h2 className="p-2 font-[550] text-sm">Your Links</h2>
-        <Button
-          variant="ghost"
-          onClick={refreshHandler}
-          size="icon"
-          className="p-2"
-        >
-          <RotateCw />
-        </Button>
-      </div>
+    <div className="p-4">
       <div className="">
-        <DataTable data={data} />
+        <DataTable
+          data={data}
+          refreshHandler={refreshHandler}
+          handleDeletion={handleDeletion}
+        />
       </div>
     </div>
   );

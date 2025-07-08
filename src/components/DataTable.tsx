@@ -8,18 +8,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "./ui/button";
-import { toast } from "sonner";
-// import { useNavigate } from "react-router-dom";
+import { AddRows } from "./AddRows";
+import { RotateCw } from "lucide-react";
 
-export function DataTable({ data }: { data: { [key: string]: string } }) {
-  // const navigate = useNavigate();
-
-  const handleDeletion = (key: string) => {
-    chrome.storage.local.remove(key, () => {
-      toast(`Successfully Deleted Link to ${key}`);
-    });
-  };
-
+export function DataTable({
+  data,
+  refreshHandler,
+  handleDeletion,
+}: {
+  data: { [key: string]: string };
+  refreshHandler: () => void;
+  handleDeletion: (key: string) => void;
+}) {
   const redirectionHandler = (link: string) => {
     window.open(link, "_blank");
   };
@@ -32,7 +32,12 @@ export function DataTable({ data }: { data: { [key: string]: string } }) {
       <TableHeader>
         <TableRow>
           <TableHead>Keys</TableHead>
-          <TableHead>Values</TableHead>
+          <TableHead>Links</TableHead>
+          <TableHead className="text-center">
+            <Button onClick={refreshHandler} variant="outline" size="sm">
+              <RotateCw />
+            </Button>
+          </TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -51,6 +56,7 @@ export function DataTable({ data }: { data: { [key: string]: string } }) {
                 variant="destructive"
                 size="sm"
                 onClick={() => handleDeletion(key)}
+                className="px-5"
               >
                 Delete
               </Button>
@@ -58,6 +64,7 @@ export function DataTable({ data }: { data: { [key: string]: string } }) {
           </TableRow>
         ))}
       </TableBody>
+      <AddRows />
     </Table>
   );
 }
