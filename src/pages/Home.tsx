@@ -30,14 +30,12 @@ function Home() {
   };
 
   return (
-    <div className="p-4">
-      <div className="">
-        <DataTable
-          data={data}
-          refreshHandler={refreshHandler}
-          handleDeletion={handleDeletion}
-        />
-      </div>
+    <div className="p-5 pt-0">
+      <DataTable
+        data={data}
+        refreshHandler={refreshHandler}
+        handleDeletion={handleDeletion}
+      />
     </div>
   );
 }

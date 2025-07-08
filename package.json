@@ -6,7 +6,7 @@
   "scripts": {
     "dev:vite": "vite",
     "dev": "npx chokidar . -i \"node_modules/**\" -i \"dist/**\" --verbose -c \"npm run build\"",
-    "build": "tsc -b && vite build --watch",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "watch:chrome": "npx web-ext run --no-reload --source-dir=dist --target=chromium"

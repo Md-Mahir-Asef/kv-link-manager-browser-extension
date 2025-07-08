@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 function Header() {
   return (
     <div
-      className="flex flex-row cursor-pointer"
+      className="flex flex-row cursor-pointer p-4 pb-0"
       onClick={() => window.location.reload()}
     >
       {" "}
