@@ -1,2 +1,3 @@
-# <img src="https://raw.githubusercontent.com/Md-Mahir-Asef/kv-link-manager-browser-extension/refs/heads/main/public/logo.png" alt="Logo" width="20"/> KV Link Manager
+# <img src="https://raw.githubusercontent.com/Md-Mahir-Asef/kv-link-manager-browser-extension/refs/heads/main/public/logo.ico" alt="Logo" width="20"/> KV Link Manager
+
 KV Link Manager is a browser extension for managing your links as a key-value (KV) pair and accessing your links easily by searching in the search bar. You can also categorize the links into various custom categories or folders, or lists. This will enrich your productivity while working in the browser. This will relieve you of the hassle of finding previously visited links in the messy bookmarks.
