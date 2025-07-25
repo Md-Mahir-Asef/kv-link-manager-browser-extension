@@ -60,7 +60,7 @@ KV Link Manager is a browser extension for managing your links as a key-value (K
 Copy and run the following command.
 ```bash
 git clone https://github.com/Md-Mahir-Asef/kv-link-manager-browser-extension.git
-cd todo-app
+cd kv-link-manager-browser-extension
 chmod +x setup.sh
 ./setup.sh
 ```
