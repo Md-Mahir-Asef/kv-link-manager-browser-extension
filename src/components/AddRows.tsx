@@ -1,12 +1,23 @@
 import { TableFooter, TableRow, TableCell } from "@/components/ui/table";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 export function AddRows() {
   const [key, setKey] = useState("");
   const [link, setLink] = useState("");
+
+  useEffect(() => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (tabs.length > 0 && tabs[0].title && tabs[0].url) {
+        setKey(tabs[0].title);
+        setLink(tabs[0].url);
+      } else {
+        console.log("Can't find tab title and url.");
+      }
+    });
+  }, []);
 
   const addLink = () => {
     try {
@@ -38,17 +49,31 @@ export function AddRows() {
           <Input
             type="text"
             id="key"
-            placeholder="Key"
+            placeholder={"Key"}
+            value={key}
+            onFocus={(e) => e.target.select()}
             onChange={(e) => setKey(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                addLink();
+              }
+            }}
           />
         </TableCell>
         <TableCell>
           <Input
             type="text"
             id="link"
-            placeholder="Link"
+            placeholder={"Link"}
+            value={link}
             className="text-blue-600 focus:underline"
+            onFocus={(e) => e.target.select()}
             onChange={(e) => setLink(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                addLink();
+              }
+            }}
           />
         </TableCell>
         <TableCell>
