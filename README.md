@@ -43,6 +43,9 @@ KV Link Manager is a browser extension for managing your links as a key-value (K
 
 ---
 
+## Screenshots
+
+---
 ## 📖 What I Learned
 
 - Developing an chrome extension
@@ -65,4 +68,4 @@ cd kv-link-manager-browser-extension
 npx tsc -b && npx vite build
 ```
 
-Then go to [chrome://extensions/](chrome://extensions/) and turn on Developer mode in the top-right corner, and then click on Load unpacked in the top-left corner. Then navigate to the kv-link-manager-browser-extension folder and select the dist folder, and click on select folder. Now you are good to go to use KV Link Manager in your browser.
+Then go to ![chrome://extensions/](chrome://extensions/) and turn on Developer mode in the top-right corner, and then click on Load unpacked in the top-left corner. Then navigate to the kv-link-manager-browser-extension folder and select the dist folder, and click on select folder. Now you are good to go to use KV Link Manager in your browser.
