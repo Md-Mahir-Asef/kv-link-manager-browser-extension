@@ -3,6 +3,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
+import { Plus } from "lucide-react";
 
 export function AddRows() {
   const [key, setKey] = useState("");
@@ -51,6 +52,7 @@ export function AddRows() {
             id="key"
             placeholder={"Key"}
             value={key}
+            className="truncate"
             onFocus={(e) => e.target.select()}
             onChange={(e) => setKey(e.target.value)}
             onKeyDown={(e) => {
@@ -66,7 +68,7 @@ export function AddRows() {
             id="link"
             placeholder={"Link"}
             value={link}
-            className="text-blue-600 focus:underline"
+            className="text-blue-600 focus:underline truncate"
             onFocus={(e) => e.target.select()}
             onChange={(e) => setLink(e.target.value)}
             onKeyDown={(e) => {
@@ -78,7 +80,7 @@ export function AddRows() {
         </TableCell>
         <TableCell>
           <Button size="sm" onClick={addLink}>
-            Add Link
+            <Plus />
           </Button>
         </TableCell>
       </TableRow>

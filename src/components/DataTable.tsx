@@ -10,6 +10,7 @@ import {
 import { Button } from "./ui/button";
 import { AddRows } from "./AddRows";
 import { RotateCw } from "lucide-react";
+import { Trash2 } from "lucide-react";
 
 export function DataTable({
   data,
@@ -27,13 +28,18 @@ export function DataTable({
   const entries = Object.entries(data);
 
   return (
-    <Table className="p-4">
+    <Table className="p-4 table-fixed">
       <TableCaption className="p-4">A list of your links.</TableCaption>
+      <colgroup>
+        <col className="w-[40vw]" />
+        <col className="w-[40vw]" />
+        <col className="w-[10vw]" />
+      </colgroup>
       <TableHeader>
         <TableRow>
           <TableHead>Keys</TableHead>
           <TableHead>Links</TableHead>
-          <TableHead className="text-center">
+          <TableHead>
             <Button onClick={refreshHandler} variant="outline" size="sm">
               <RotateCw />
             </Button>
@@ -43,10 +49,10 @@ export function DataTable({
       <TableBody>
         {entries.map(([key, value]) => (
           <TableRow key={key}>
-            <TableCell>{key}</TableCell>
+            <TableCell className="truncate">{key}</TableCell>
             <TableCell
               id="linkRedirectionPointTableCell"
-              className="text-blue-600 hover:underline visited:text-purple-600 cursor-pointer"
+              className="text-blue-600 hover:underline visited:text-purple-600 cursor-pointer truncate"
               onClick={() => redirectionHandler(value)}
             >
               {value}
@@ -56,9 +62,9 @@ export function DataTable({
                 variant="destructive"
                 size="sm"
                 onClick={() => handleDeletion(key)}
-                className="px-5"
+                className="px-5 pl-0"
               >
-                Delete
+                <Trash2 />
               </Button>
             </TableCell>
           </TableRow>
